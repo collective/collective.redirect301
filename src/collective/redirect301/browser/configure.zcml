@@ -2,10 +2,14 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="collective.redirect301">
+    i18n_domain="collective.redirect301"
+    >
 
   <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
-  <include package="z3c.jbot" file="meta.zcml" />
+  <include
+      package="z3c.jbot"
+      file="meta.zcml"
+      />
   <browser:jbot
       directory="overrides"
       layer="collective.redirect301.interfaces.ICollectiveRedirect301Layer"
@@ -13,9 +17,18 @@
 
   <!-- Publish static files -->
   <plone:static
+      directory="static"
       name="collective.redirect301"
       type="plone"
-      directory="static"
+      />
+
+  <browser:page
+      name="plone_redirector_view"
+      for="*"
+      class=".browser.FourOhFourView"
+      allowed_interface="plone.app.redirector.interfaces.IFourOhFourView"
+      permission="zope2.View"
+      layer="..interfaces.ICollectiveRedirect301Layer"
       />
 
 </configure>
