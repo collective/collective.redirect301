@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.0a1 (unreleased)
-------------------
+1.0 (2023-07-19)
+----------------
 
 - Initial release.
   [libargutxi]
