@@ -40,9 +40,7 @@ setup(
     project_urls={
         "PyPI": "https://pypi.python.org/pypi/collective.redirect301",
         "Source": "https://github.com/collective/collective.redirect301",
-        "Tracker": (
-            "https://github.com/collective/collective.redirect301/issues"
-        ),
+        "Tracker": ("https://github.com/collective/collective.redirect301/issues"),
         # 'Documentation': 'https://collective.redirect301.readthedocs.io/en/latest/',
     },
     license="GPL version 2",
