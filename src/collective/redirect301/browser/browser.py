@@ -7,7 +7,6 @@ from six.moves.urllib.parse import quote
 
 
 class FourOhFourView(OriginalFourOhFourView):
-
     def attempt_redirect(self):
 
         url = self._url()
@@ -23,7 +22,7 @@ class FourOhFourView(OriginalFourOhFourView):
         if storage is None:
             return False
 
-        old_path = '/'.join(old_path_elements)
+        old_path = "/".join(old_path_elements)
 
         # First lets try with query string in cases or content migration
 
@@ -35,7 +34,7 @@ class FourOhFourView(OriginalFourOhFourView):
             # if we matched on the query_string we don't want to include it
             # in redirect
             if new_path:
-                query_string = ''
+                query_string = ""
 
         if not new_path:
             new_path = storage.get(old_path)
@@ -44,10 +43,7 @@ class FourOhFourView(OriginalFourOhFourView):
             new_path = self.find_redirect_if_view(old_path_elements, storage)
 
         if not new_path:
-            new_path = self.find_redirect_if_template(
-                url,
-                old_path_elements,
-                storage)
+            new_path = self.find_redirect_if_template(url, old_path_elements, storage)
 
         if not new_path:
             return False
@@ -58,8 +54,7 @@ class FourOhFourView(OriginalFourOhFourView):
             # avoid double quoting
             url_path = unquote(url.path)
             url_path = quote(url_path)
-            url = urllib.parse.SplitResult(
-                *(url[:2] + (url_path, ) + url[3:])).geturl()
+            url = urllib.parse.SplitResult(*(url[:2] + (url_path,) + url[3:])).geturl()
         else:
             url = self.request.physicalPathToURL(new_path)
 
