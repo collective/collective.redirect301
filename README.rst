@@ -66,9 +66,7 @@ Finally you need to go to the Plone Addons Controlpanel and install the product 
 Authors
 -------
 
-Lur Ibargutxi <libargutxi@codesyntax.com>
-
-- ?
+- Lur Ibargutxi <libargutxi@codesyntax.com>
 
 
 Contribute
