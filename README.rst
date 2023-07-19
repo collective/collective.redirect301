@@ -31,33 +31,17 @@
 collective.redirect301
 ======================
 
-An add-on for Plone
+Thanks to `plone.app.redirector`_ Plone saves all URL changes that happen in the content and redirects the user to the proper content url.
 
-Features
---------
+It also allows the content-editor to create custom URLs for the content.
 
-- Can be bullet points
+When doing so Plone uses a `HTTP 302`_ status code to redirect the user to the new URL.
 
+Sometimes you want those redirects to return a `HTTP 301`_ status code, signaling that the redirect is *Permanent*.
 
-Examples
---------
+There was a philosophical discussion when the status code was decided and the decission was to return a *Temporary* redirect.
 
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
+This addon product, when enabled, changes that behavior and allows returning a *Permanent* redirect in such cases.
 
 
 Installation
@@ -76,16 +60,13 @@ Install collective.redirect301 by adding it to your buildout::
 and then running ``bin/buildout``
 
 
+Finally you need to go to the Plone Addons Controlpanel and install the product there.
+
+
 Authors
 -------
 
-Provided by awesome people ;)
-
-
-Contributors
-------------
-
-Put your name here, you deserve it!
+Lur Ibargutxi <libargutxi@codesyntax.com>
 
 - ?
 
@@ -95,17 +76,19 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/collective.redirect301/issues
 - Source Code: https://github.com/collective/collective.redirect301
-- Documentation: https://docs.plone.org/foo/bar
 
 
 Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
 
 
 License
 -------
 
 The project is licensed under the GPLv2.
+
+.. _`HTTP 302`: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/302
+.. _`HTTP 301`: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/301
+.. _`plone.app.redirector`: https://pypi.org/project/plone.app.redirector/
